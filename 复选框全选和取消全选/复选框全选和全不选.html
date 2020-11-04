@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>复选框全选</title>
+</head>
+<body>
+	<script type="text/javascript">
+		window.onload = function() {
+			var topBox = document.getElementById("topBox");
+			var hobbys = document.getElementsByName("hobby");
+			topBox.onclick = function() {
+				for (var i = 0; i < hobbys.length; i++) {
+					hobbys[i].checked = topBox.checked;
+				}
+			}
+
+			var boxTotal = hobbys.length;
+			for (var i = 0; i < hobbys.length; i++) {
+				hobbys[i].onclick = function() {
+					var checkedTotal = 0;
+					for(var i = 0; i < hobbys.length; i++) {
+						if (hobbys[i].checked == true) {
+							checkedTotal++;
+						}
+					}
+					topBox.checked = (boxTotal == checkedTotal);
+				}
+			}
+		}
+	</script>
+	<input type="checkbox" id="topBox">
+	<hr width="30%" align="left">
+	<input type="checkbox" name="hobby" value="cy">抽烟<br>
+	<input type="checkbox" name="hobby" value="hj">喝酒<br>
+	<input type="checkbox" name="hobby" value="tt">烫头<br>
+	<input type="checkbox" name="hobby" value="dmj">打麻将
+</body>
+</html>
