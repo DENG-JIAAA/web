@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内置支持类Array</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* var arr = new Array();
+			document.write(arr.length + "<br>");
+			var arr2 = new Array(10);
+			document.write(arr2.length + "<br>");
+			var arr3 = [];
+			document.write(arr3.length + "<br>");
+			var arr4 = [true, 3.14, "hello", undefined, 666];
+			arr4[7] = "777";
+			document.write(arr4.length + "<br>");
+			for(var i = 0; i < arr4.length; i++) {
+				document.write(arr4[i] + "<br>");
+			}
+			document.write("<br>");
+			document.write("<br>");
+			document.write("<br>");
+			var array = new Array(1,2,3,4,5,10,11,100);
+			for(var i = 0; i < array.length; i++){
+				document.write(array[i] + " ");
+			} */
+			
+			/* 数组常用方法 */
+			// 1、将数组内的元素连接成一个字符串，并返回。
+			var arr = [1,2,3,4];
+			var str = arr.join("~");
+			console.log(str);
+			
+			arr.push(6);
+			// 2、向数组末尾添加一个元素，数组长度加1。
+			console.log(arr.join("-"));
+			
+			// 3、将数组末尾元素弹出，数组长度减1。
+			arr.pop();
+			console.log(arr);
+			
+			// 4、JS中的数组可以自动模拟栈数据结构（后进先出，先进后出原则）
+			
+			// 5、反转数组。
+			arr.reverse();
+			console.log(arr);
+			
+			
+		</script>
+	</body>
+</html>
