@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>设置table的tbody</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var empInfo = {
+				"total" : 4,
+				"emps" :[
+					{"empno" : 5234, "ename" : "张三", "sal" : 2000.0},
+					{"empno" : 7183, "ename" : "李四", "sal" : 5000.0},
+					{"empno" : 4546, "ename" : "王五", "sal" : 3000.0},
+					{"empno" : 5613, "ename" : "赵六", "sal" : 7000.0}
+				]
+			};
+			
+			window.onload = function() {
+				var showEmpsObj = document.getElementById("showEmpsBtn");
+				showEmpsObj.onclick = function() {
+					var empsBodyHtml = "";
+					var emps = empInfo.emps;
+					for(var i = 0; i < emps.length; i++) {
+						var emp = emps[i];
+						empsBodyHtml += "<tr>";
+						empsBodyHtml += "<td>" + emp.empno + "</td>";
+						empsBodyHtml += "<td>" + emp.ename + "</td>";
+						empsBodyHtml += "<td>" + emp.sal + "</td>";
+						empsBodyHtml += "<tr>";
+					}
+					document.getElementById("empsBody").innerHTML = empsBodyHtml;
+					document.getElementById("countSpan").innerHTML = empInfo.total;
+				}
+			}
+		</script>
+		<h1>员工信息列表</h1>
+		<input type="button" value="显示员工信息" id="showEmpsBtn" />
+		<hr>
+		<table border="1px" width="50%">
+			<tr>
+				<th>员工编号</th>
+				<th>员工姓名</th>
+				<th>员工薪资</th>
+			</tr>
+			<tbody id="empsBody">
+				<!-- <tr>
+					<td>id</td>
+					<td>name</td>
+					<td>sal</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>name</td>
+					<td>sal</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>name</td>
+					<td>sal</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>name</td>
+					<td>sal</td>
+				</tr> -->
+			</tbody>
+		</table>
+		总共<span id="countSpan">0</span>条数据
+	</body>
+</html>
