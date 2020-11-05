@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>删除确认</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function confirmDel() {
+				if(window.confirm("确认要删除数据吗？")) {
+					console.log("正在删除");
+				} else {
+					console.log("取消删除");
+				}
+			}
+		</script>
+		<h1>删除确认页面</h1>
+		用户数据（1GB）
+		<input type="button" value="点击删除" onclick="confirmDel()"/>
+		<br>
+		<br>
+		<input type="button" value="后退" onclick="window.history.back()"/>
+	</body>
+</html>
